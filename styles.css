@@ -1,0 +1,39 @@
+body {
+    color: #333;
+    font: 16px/1 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body::before{
+    content: "Ice Cream Flavors";
+    font-size: 35px;
+    font-weight: 700;
+    padding: 30px;
+}
+
+.ice-cream-list {
+    list-style: none;
+    margin: 20px;
+    counter-reset: line;
+}
+
+.ice-cream-list>li {
+    position: relative;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 1px rgba(5, 5, 5, 20%)
+}
+
+.ice-cream-list>li:before {
+    position: absolute;
+    left: -30px;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    margin-right: 20px;
+    background-color: #004e7e;
+    border-radius: 50%;
+    color: #fff;
+    text-align: center;
+    line-height: 1.25em;
+    counter-increment: line;
+    content: counter(line);
+}
